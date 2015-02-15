@@ -19,7 +19,7 @@ import random
 nicknumb = random.randint(0,999)
 
 bot_owner = "Meandonlymeandnooneelse"
-nick = "pietsbot" + str(nicknumb)
+nick = "ErasGamesBot" + str(nicknumb)
 chan = "#erasgames"
 sock = socket.socket()
 sock.connect(("irc.freenode.net",6667))
