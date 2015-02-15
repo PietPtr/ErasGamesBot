@@ -15,15 +15,17 @@
 import socket
 import time
 import random
+# game modules
+import mastermind
 
 nickNumb = random.randint(0,999)
 
 botOwner = "Meandonlymeandnooneelse"
-nick = "ErasGamesBot" + str(nicknumb)
+nick = "ErasGamesBot" + str(nickNumb)
 chan = "#erasgames"
 sock = socket.socket()
 sock.connect(("irc.freenode.net",6667))
-sock.send("USER " + nick + " 0 * :" + bot_owner + "\r\n")
+sock.send("USER " + nick + " 0 * :" + botOwner + "\r\n")
 sock.send("NICK " + nick + "\r\n")
 
 def msg(msg):
@@ -32,12 +34,13 @@ def msg(msg):
 def notice(msg, nick):
     return sock.send("NOTICE " + nick + " :" + msg + "\r\n")
 
-def getsender(data):
+def getSender(data):
     senderTemp = data.split("!")[0]
     sender = senderTemp.split(":")[1]
     print "Sender: " + sender
     return sender
 
+mastermind = mastermind.MastermindGame(10,6,"0123456789")
 while 1:
     data = sock.recv(512)
     print data
