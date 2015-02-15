@@ -16,9 +16,9 @@ import socket
 import time
 import random
 
-nicknumb = random.randint(0,999)
+nickNumb = random.randint(0,999)
 
-bot_owner = "Meandonlymeandnooneelse"
+botOwner = "Meandonlymeandnooneelse"
 nick = "ErasGamesBot" + str(nicknumb)
 chan = "#erasgames"
 sock = socket.socket()
