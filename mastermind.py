@@ -1,17 +1,18 @@
 from random import randint
-class mastermindGame:
+
+class MastermindGame:
     def __init__(self, MAX, LENGTH, pos):
         self.MAX = MAX
         self.LENGTH = LENGTH
         self.WIDTH = len(pos)
         self.pos = pos
         self.guessesLeft = self.MAX
-        self.ans = generateRandomAnswer()
+        self.ans = self.generateRandomAnswer()
     
     def generateRandomAnswer(self):
-        posNotUsed = pos
+        posNotUsed = self.pos
         ans = ""
-        for i in range(0, LENGTH):
+        for i in range(0, self.LENGTH):
             char = posNotUsed[randint(0,len(posNotUsed) - 1)]
             posNotUsed = posNotUsed.replace(char, "")
             ans += char
