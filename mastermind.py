@@ -1,9 +1,9 @@
 from random import randint
 class mastermindGame:
-    def __init__(self, MAX, LENGTH, W, pos):
+    def __init__(self, MAX, LENGTH, pos):
         self.MAX = MAX
         self.LENGTH = LENGTH
-        self.WIDTH = WIDTH
+        self.WIDTH = len(pos)
         self.pos = pos
         self.guessesLeft = self.MAX
         self.ans = generateRandomAnswer()
