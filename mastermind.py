@@ -19,18 +19,18 @@ class mastermindGame:
     
     def putGuess(self, guess):
         i = 0
-        rP = 0
-        rC = 0
-        for c in guess:
-            if c == self.ans[i]:
-                rP += 1
+        rightPlace = 0
+        rightChar = 0
+        for guessChar in guess:
+            if guessChar == self.ans[i]:
+                rightPlace += 1
             i+=1
-        for c in guess:
+        for guessChar in guess:
             isRight = False
-            for c2 in self.ans:
-                if c == c2:
+            for ansChar in self.ans:
+                if guessChar == ansChar:
                     isRight = True
             if isRight:
-                rC += 1
-        rC -= rP
-        return (rP * 'O') + (rC * 'X')
+                rightChar += 1
+        rightChar -= rightPlace
+        return (rightPlace * 'O') + (rightChar * 'X')
