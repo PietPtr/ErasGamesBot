@@ -39,8 +39,12 @@ def getSender(data):
     sender = senderTemp.split(":")[1]
     print "Sender: " + sender
     return sender
+    
+def getMessage(string):
+    msg = string.split(":")[2]
+    return msg
 
-mastermind = mastermind.MastermindGame(10,6,"0123456789")
+game = mastermind.MastermindGame(10,6,"0123456789")
 while 1:
     data = sock.recv(512)
     print data
